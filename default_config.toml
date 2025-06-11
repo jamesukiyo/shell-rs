@@ -1,0 +1,6 @@
+emoji = "🦀" # Emoji to display in prompt
+display_name = "shell-rs" # Name to display in prompt
+separator = "@" # Separator between name and path (ignored if show_dir is false)
+char = ">" # Prompt character
+insert_blank_line = true # Insert a blank line after output
+show_dir = true # Show current directory in prompt
