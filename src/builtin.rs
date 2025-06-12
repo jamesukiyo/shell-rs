@@ -18,7 +18,7 @@ pub fn exec_builtin(cmd: &str, args: &[&str]) -> Result<(), String> {
 			Ok(())
 		}
 		"ls" => {
-			ls()?;
+			ls(args)?;
 			Ok(())
 		}
 		"help" => {
@@ -56,11 +56,10 @@ fn pwd() -> Result<(), String> {
 	Ok(())
 }
 
-// TODO: improve output - prefixed with `./`
 // https://doc.rust-lang.org/std/fs/fn.read_dir.html
-fn ls() -> Result<(), String> {
+fn ls(args: &[&str]) -> Result<(), String> {
 	// Collect all items in the current directory with read_dir iterator
-	let mut entries: Vec<_> = std::fs::read_dir(".")
+	let mut entries: Vec<_> = std::fs::read_dir(args.first().unwrap_or(&"."))
 		.map_err(|e| format!("ls: {e}"))?
 		.collect::<Result<Vec<_>, _>>()
 		.map_err(|e| format!("ls: {e}"))?;
