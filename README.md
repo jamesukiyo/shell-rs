@@ -44,6 +44,14 @@ A config file will be created at `~/.config/shell-rs/config.toml`.
 
 ## Changelog
 
+### cd
+- 0.1.0: base
+
+### ls
+- 0.1.0: base
+- 0.2.0: added `-a`, `-l`, `-h`, `-r` options
+
+### pwd
 - 0.1.0: base
 
 ## Improvements
@@ -54,6 +62,8 @@ A config file will be created at `~/.config/shell-rs/config.toml`.
 - Passthrough to system commands when not builtin
 - Better support for invalid config (now it just fails to load with no indication)
 - I don't think I handle errors very well so would like to improve that
+
+TODOs can be found scattered throughout the code too.
 
 ## License
 
