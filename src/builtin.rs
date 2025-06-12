@@ -69,7 +69,9 @@ fn ls() -> Result<(), String> {
 	entries.sort_by_key(|entry| entry.path());
 
 	for entry in entries {
-		println!("{}", entry.path().display());
+		let path = entry.path();
+		let display_path = path.strip_prefix("./").unwrap_or(&path);
+		println!("{}", display_path.display());
 	}
 
 	Ok(())
