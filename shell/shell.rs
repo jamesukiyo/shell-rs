@@ -1,15 +1,15 @@
 use std::io::stdin;
 
-use crate::{config, exec, prompt};
+use crate::{exec, prompt};
 
 pub struct Shell {
-	config: config::Config,
+	config: shell_config::Config,
 }
 
 impl Shell {
 	pub fn new() -> Self {
 		Shell {
-			config: config::Config::load().unwrap_or_default(),
+			config: shell_config::Config::load().unwrap_or_default(),
 		}
 	}
 

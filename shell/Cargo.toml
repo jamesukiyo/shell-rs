@@ -1,0 +1,16 @@
+[package]
+name = "shell-rs"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "shell"
+path = "main.rs"
+
+[dependencies]
+clap = { workspace = true }
+shell-cd = { path = "../commands/cd" }
+shell-common = { path = "../common" }
+shell-config = { path = "../config" }
+shell-ls = { path = "../commands/ls" }
+shell-pwd = { path = "../commands/pwd" }

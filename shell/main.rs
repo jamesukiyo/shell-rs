@@ -1,5 +1,4 @@
 mod builtin;
-mod config;
 mod exec;
 mod prompt;
 mod shell;
