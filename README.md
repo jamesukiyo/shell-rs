@@ -50,6 +50,7 @@ A config file will be created at `~/.config/shell-rs/config.toml`.
 ### ls
 - 0.1.0: base
 - 0.2.0: added `-a`, `-l`, `-h`, `-r` options
+- 0.2.1: fix `--help` handling to hide additional error message
 
 ### pwd
 - 0.1.0: base
