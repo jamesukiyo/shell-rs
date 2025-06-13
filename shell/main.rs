@@ -1,4 +1,4 @@
-mod builtin;
+#[warn(clippy::pedantic)] // For learning/experimenting
 mod exec;
 mod prompt;
 mod shell;
