@@ -17,7 +17,11 @@ impl ShellCommand for LsCommand {
 			Ok(parsed_args) => Self::execute_with_args(parsed_args),
 			// TODO: Prevent error when using --help
 			Err(e) => {
+				// This outputs the help message
 				eprintln!("{e}");
+				// This displays the error message at the bottom
+				// Need to match to an error provided by clap I think and
+				// mitigate it that way inside `parse_args`
 				Err("Invalid arguments, please try again".to_string())
 			}
 		}
@@ -27,9 +31,12 @@ impl ShellCommand for LsCommand {
 impl LsCommand {
 	// This was confusing to me but it works, thanks to a little help from
 	// Claude chat too..
+	// TODO: Handle the error mentioned above where when displaying the help
+	// message, an error is shown below it
 	fn parse_args(args: &[&str]) -> Result<LsArgs, String> {
 		let args_with_program =
 			std::iter::once("ls").chain(args.iter().copied());
+
 		LsArgs::try_parse_from(args_with_program).map_err(|e| e.to_string())
 	}
 
